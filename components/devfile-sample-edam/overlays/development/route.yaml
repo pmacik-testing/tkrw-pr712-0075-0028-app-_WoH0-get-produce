@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: devfile-sample-edam
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: devfile-sample-edam
+    app.kubernetes.io/part-of: tkrw-pr712-0075-0028-app
+  name: devfile-sample-edamquq5
+spec:
+  path: /
+  port:
+    targetPort: 3001
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: devfile-sample-edam
+    weight: null
+status: {}
